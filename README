@@ -1,0 +1,3 @@
+An API that lets bakery owners and employees view, create, update, and delete bakery products and product categories.
+
+Public users can read data. Authenticated users can create, update, and delete.
