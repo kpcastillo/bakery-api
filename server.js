@@ -1,10 +1,22 @@
 const express = require('express');
 const app = express();
+
+const mongodb = require('./db/connection');
  
-app.get('/', (req, res) => {
-  res.send("Hello");
-});
+const port= process.env.PORT || 3000;
+
+app.use(bodyParser.json());
+
+app.get('/', require('./routes')
+);
  
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
+
+mongodb.initDb((err) => {
+  if (err) {
+    console.error('Error initializing database:', err);
+    return;
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on port ${port}`);
+}
 });

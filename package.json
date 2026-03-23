@@ -5,11 +5,12 @@
   "license": "ISC",
   "author": "Karen I Paz Castillo",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0"
   }
 }

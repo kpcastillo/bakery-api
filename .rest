@@ -1,0 +1,36 @@
+### getAllProducts
+GET http://localhost:3000/products
+
+### getProductById
+GET http://localhost:3000/products/69bdb4d9a0c77a20109d4130
+
+### createProduct
+POST http://localhost:3000/products
+Content-Type: application/json
+{
+  "name": "Raspberry Loaf Cake",
+  "categoryId": "69bd85e5a0c77a20109d4127",
+  "flavor": "Raspberry",
+  "price": 12,
+  "size": "Medium",
+  "description": "Soft Raspberry loaf cake with citrus glaze",
+  "available": true,
+  "stock": 6
+}
+### updateProduct
+PUT http://localhost:3000/products/69bdb4d9a0c77a20109d4130 HTTP/1.1
+Content-Type:  application/json
+
+{
+  "name": "Raspberry Loaf Cake",
+  "categoryId": "69bd85e5a0c77a20109d4127",
+  "flavor": "Raspberry",
+  "price": 12,
+  "size": "Medium",
+  "description": "Soft Raspberry loaf cake with citrus glaze",
+  "available": true,
+  "stock": 5
+}
+
+### deleteProduct
+DELETE http://localhost:3000/products/69bdb4d9a0c77a20109d4130
