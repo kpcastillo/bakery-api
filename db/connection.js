@@ -33,7 +33,7 @@ const initDb = async () => {
 
 const getDb = () => {
   if (!_db) {
-    throw new Error('Database not initialized. Call initDb() first.');
+    throw new Error('Database not initialized.');
   }
   return _db;
 };

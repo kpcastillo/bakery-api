@@ -17,13 +17,13 @@ app.get('/', (req, res) => {
   });
 });
 
-initDb((err) => {
-  if (err) {
+initDb()
+  .then(() => {
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Server listening on port ${port}`);
+    });
+  })
+  .catch((err) => {
     console.error('Error initializing database:', err);
-    return;
-  }
-
-  app.listen(port, () => {
-    console.log(`Connected to DB and listening on port ${port}`);
+    process.exit(1);
   });
-});
