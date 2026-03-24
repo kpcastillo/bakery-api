@@ -9,13 +9,13 @@ const {
 
 const router = Router();
 
-router.get('/products', getAllProducts);
-router.get('/products/:id', getProductById);
+router.get('/', getAllProducts);
+router.get('/:id', getProductById);
 
-router.post('/products', createProduct);
+router.post('/', createProduct);
 
-router.put('/products/:id', updateProduct);
+router.put('/:id', updateProduct);
 
-router.delete('/products/:id', deleteProduct);
+router.delete('/:id', deleteProduct);
 
 module.exports = router;
