@@ -5,12 +5,12 @@
   "license": "ISC",
   "author": "Karen I Paz Castillo",
   "type": "commonjs",
-  "main": "dist/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
+    "start": "node server.js",
     "build": "tsc",
-    "dev": "tsc && node dist/server.js"
+    "dev": "tsc && node server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.2",
