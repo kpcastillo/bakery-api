@@ -14,9 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const productsRoutes = require('./routes/products');
 app.use('/products', productsRoutes);
 
-//app.get('/products', (req, res) => {
-  //res.send({ test: 'direct route works' });
-//});
+const categoriesRoutes = require('./routes/categories');
+app.use('/categories', categoriesRoutes)
 
 app.get('/', (req, res) => {
   res.send({
