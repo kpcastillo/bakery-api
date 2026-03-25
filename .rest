@@ -63,3 +63,34 @@ Content-Type: application/json
 
 ### deleteCategory
 DELETE http://localhost:3000/categories/69c433948f91d0ea03fc54f9
+
+### getAllUsers
+GET http://localhost:3000/users
+
+### getUserById
+GET http://localhost:3000/users/69c06ef1a0c77a20109d4138
+
+### createUser
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Cookies",
+  "email": "gigi@bakery.com",
+  "password": "newpassthree",
+  "position": "manager"
+}
+
+### updateUser
+PUT http://localhost:3000/users/69c4571040b0f5a78a76101d  HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Gianna G",
+  "email": "gigi@bakery.com",
+  "password": "newpassthree",
+  "position": "baker"
+}
+
+### deleteUser
+DELETE http://localhost:3000/users/69c4571040b0f5a78a76101d

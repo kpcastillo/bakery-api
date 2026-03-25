@@ -17,6 +17,9 @@ app.use('/products', productsRoutes);
 const categoriesRoutes = require('./routes/categories');
 app.use('/categories', categoriesRoutes)
 
+const userRoutes = require('./routes/users');
+app.use('/users', userRoutes);
+
 app.get('/', (req, res) => {
   res.send({
     message: 'Welcome to the bakery API. Use /products, /categories, or /users to access the endpoints.'
