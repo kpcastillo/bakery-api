@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const productsRoutes = require('./routes/products');
 app.use('/products', productsRoutes);
 
+//app.get('/products', (req, res) => {
+  //res.send({ test: 'direct route works' });
+//});
+
 app.get('/', (req, res) => {
   res.send({
     message: 'Welcome to the bakery API. Use /products, /categories, or /users to access the endpoints.'
