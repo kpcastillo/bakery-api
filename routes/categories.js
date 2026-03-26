@@ -6,15 +6,16 @@ const {
   updateCategory,
   deleteCategory
 } = require('../controllers/categories');
+const { categoryValidationRules, validateCategory } = require('../middleware/validator');
 
 const router = Router();
 
 router.get('/', getAllCategories);
 router.get('/:id', getCategoryById);
 
-router.post('/', createCategory);
+router.post('/', categoryValidationRules(), validateCategory, createCategory);
 
-router.put('/:id', updateCategory);
+router.put('/:id', categoryValidationRules(), validateCategory, updateCategory);
 
 router.delete('/:id', deleteCategory);
 
