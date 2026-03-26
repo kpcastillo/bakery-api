@@ -4,12 +4,14 @@ const { initDb } = require('./db/connection');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 
+
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 const productsRoutes = require('./routes/products');
 app.use('/products', productsRoutes);
@@ -25,6 +27,12 @@ app.get('/', (req, res) => {
     message: 'Welcome to the bakery API. Use /products, /categories, or /users to access the endpoints.'
   });
 });
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+module.exports = app;
 
 initDb()
   .then(() => {
