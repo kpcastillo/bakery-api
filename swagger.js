@@ -5,8 +5,9 @@ const doc = {
         title: 'Bakery API',
         description: 'Auto generated documentation for the Bakery API'
     },
-    host: 'localhost:3000',
-    schemes: ['http'],
+    host: 'https://bakery-api-za4w.onrender.com',
+    basePath: '/api-docs',
+    schemes: ['https'],
 };
 
 const outputFile = './swagger.json';

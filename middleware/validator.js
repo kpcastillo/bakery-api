@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator')
 const productValidationRules = () => {
     return [
         body('name').isLength({ min: 3 }).withMessage('Name must be at least 3 characters long'),
-        body('category').isLength({ min: 3 }).withMessage('Category must be at least 3 characters long'),
+        body('category').matches(/^[a-fA-F0-9]{24}$/).withMessage('Category must be a valid ObjectId'),
         body('flavor').isLength({ min: 3 }).withMessage('Flavor must be at least 3 characters long'),
         body('price').isFloat({ gt: 0 }).withMessage('Price must be a number greater than 0'),
         body('size').isIn(['Small', 'Medium', 'Large']).withMessage('Size must be one of: Small, Medium, Large'),
