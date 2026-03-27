@@ -5,7 +5,7 @@
     "description": "Auto generated documentation for the Bakery API",
     "version": "1.0.0"
   },
-  "host": "https://bakery-api-za4w.onrender.com",
+  "host": "bakery-api-za4w.onrender.com",
   "basePath": "/api-docs",
   "schemes": [
     "https"
