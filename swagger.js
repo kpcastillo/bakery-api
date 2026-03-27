@@ -6,7 +6,7 @@ const doc = {
         description: 'Auto generated documentation for the Bakery API'
     },
     host: 'bakery-api-za4w.onrender.com',
-    basePath: '/api-docs',
+    basePath: '/',
     schemes: ['https'],
 };
 

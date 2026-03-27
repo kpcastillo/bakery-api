@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "bakery-api-za4w.onrender.com",
-  "basePath": "/api-docs",
+  "basePath": "/",
   "schemes": [
     "https"
   ],
