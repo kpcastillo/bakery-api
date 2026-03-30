@@ -7,16 +7,17 @@ const {
   deleteCategory
 } = require('../controllers/categories');
 const { categoryValidationRules, validateCategory } = require('../middleware/validator');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 const router = Router();
 
 router.get('/', getAllCategories);
 router.get('/:id', getCategoryById);
 
-router.post('/', categoryValidationRules(), validateCategory, createCategory);
+router.post('/', isAuthenticated, categoryValidationRules(), validateCategory, createCategory);
 
-router.put('/:id', categoryValidationRules(), validateCategory, updateCategory);
+router.put('/:id', isAuthenticated, categoryValidationRules(), validateCategory, updateCategory);
 
-router.delete('/:id', deleteCategory);
+router.delete('/:id', isAuthenticated, deleteCategory);
 
 module.exports = router;
