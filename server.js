@@ -61,11 +61,9 @@ app.get('/', (req, res) => {
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: process.env.GITHUB_CALLBACK_URL || 'http://localhost:3000/auth/github/callback'
+  callbackURL: process.env.GITHUB_CALLBACK_URL || 'https://bakery-api-za4w.onrender.com/auth/github/callback'
 },
 (accessToken, refreshToken, profile, done) => {
-  // For simplicity, we will just return the GitHub profile as the user object.
-  // In a real application, you would want to associate the GitHub account with a user record in your database.
   return done(null, profile);
 }));
 
@@ -77,10 +75,10 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-app.get('/auth', (req, res) => {
+app.get('/auth/github', (req, res) => {
   res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : 'Not logged in');
 });
-app.get('/github/callback', passport.authenticate('github', { failureRedirect: '/auth' }), (req, res) => {
+app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/auth' }), (req, res) => {
   req.session.user = req.user;
   res.redirect('/');
 });
