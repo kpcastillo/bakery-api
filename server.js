@@ -75,14 +75,6 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-app.get('/auth/github', (req, res) => {
-  res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : 'Not logged in');
-});
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/auth' }), (req, res) => {
-  req.session.user = req.user;
-  res.redirect('/');
-});
-
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
